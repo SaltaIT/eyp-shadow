@@ -1,4 +1,4 @@
-class shadow::useradd::config inherits useradd {
+class shadow::useradd::config inherits shadow {
 
   file { '/etc/default/useradd':
     ensure  => 'present',
