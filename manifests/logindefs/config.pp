@@ -1,4 +1,4 @@
-class shadow::logindefs::config inherits shadow {
+class shadow::logindefs::config inherits shadow::logindefs {
 
   file { '/etc/login.defs':
     ensure  => 'present',
