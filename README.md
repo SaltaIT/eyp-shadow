@@ -23,26 +23,18 @@ OS/Puppet version it works with.
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+**/etc/default/useradd** and **login.defs** management
 
 ## Setup
 
 ### What shadow affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+* manages package containing **/etc/default/useradd**
+* **/etc/default/useradd** itself
 
 ### Setup Requirements
 
-This module requires pluginsync enabled 
+This module requires pluginsync enabled
 
 ### Beginning with shadow
 
@@ -59,10 +51,16 @@ the fancy stuff with your module here.
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+### classes
+
+#### useradd
+
+* **group**: The group name or ID for a new user's initial group (when the **-N/--no-user-group** is used or when the **USERGROUPS_ENAB** variable is set to **no** in **/etc/login.defs**). The named group must exist, and a numerical group **ID** must have an existing entry (default: 100)
+* **home**: The default base directory for the system if no homedir (-d) is specified. **home** is concatenated with the account name to define the home directory. (default: /home)
+* **inactive**:  The number of days after a password expires until the account is permanently disabled. A value of 0 disables the account as soon as the password has expired, and a value of -1 disables the feature (default: -1)
+* **expire**: The date on which the user account will be disabled. The date is specified in the format YYYY-MM-DD (default: undef)
+* **shell**: The name of the user's login shell (default: /sbin/nologin)
+* **skel**:  The skeleton directory, which contains files and directories to be copied in the user's home directory, when the home directory is created by useradd. (default: /etc/skel)
 
 ## Limitations
 

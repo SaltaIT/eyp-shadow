@@ -1,0 +1,68 @@
+#
+# puppet managed file
+#
+# /etc/login.defs - Configuration control definitions for the login package.
+#
+
+
+MAIL_DIR	<%= @maildir %>
+
+
+# Password aging controls:
+
+#	PASS_MAX_DAYS	Maximum number of days a password may be used.
+PASS_MAX_DAYS	<%= @pass_max_days %>
+
+#	PASS_MIN_DAYS	Minimum number of days allowed between password changes.
+PASS_MIN_DAYS	<%= @pass_min_days %>
+
+#	PASS_MIN_LEN	Minimum acceptable password length.
+PASS_MIN_LEN	<%= @pass_min_len %>
+
+#	PASS_WARN_AGE	Number of days warning given before a password expires.
+PASS_WARN_AGE	<%= @pass_warn_age %>
+
+#
+# Min/max values for automatic uid/gid selection in useradd
+#
+UID_MIN                  <%= @uid_min %>
+UID_MAX                  <%= @uid_max %>
+GID_MIN                  <%= @gid_min %>
+GID_MAX                  <%= @gid_max %>
+<% if defined?(@sys_uid_min) -%>
+SYS_UID_MIN               <%= @sys_uid_min %>
+<% end -%>
+<% if defined?(@sys_uid_max) -%>
+SYS_UID_MAX               <%= @sys_uid_max %>
+<% end -%>
+<% if defined?(@sys_gid_min) -%>
+SYS_GID_MIN               <%= @sys_gid_min %>
+<% end -%>
+<% if defined?(@sys_gid_max) -%>
+SYS_GID_MAX               <%= @sys_gid_max %>
+<% end -%>
+
+#
+# If defined, this command is run when removing a user.
+# It should remove any at/cron/print jobs etc. owned by
+# the user to be removed (passed as the first argument).
+#
+#USERDEL_CMD	/usr/sbin/userdel_local
+
+#
+# If useradd should create home directories for users by default
+# On RH systems, we do. This option is overridden with the -m flag on
+# useradd command line.
+#
+CREATE_HOME	yes
+
+# The permission mask is initialized to this value. If not specified,
+# the permission mask will be initialized to 022.
+UMASK           077
+
+# This enables userdel to remove user groups if no members exist.
+#
+USERGROUPS_ENAB yes
+
+# Use SHA512 to encrypt password.
+ENCRYPT_METHOD SHA512
