@@ -7,7 +7,7 @@ class shadow::useradd (
                         $skel     = '/etc/skel',
                       ) inherits shadow {
 
-  class { '::shadow::install': } ->
+  Class['::shadow::install'] ->
   class { '::shadow::useradd::config': } ->
   Class['::shadow::useradd']
 }

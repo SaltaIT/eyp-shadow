@@ -13,8 +13,9 @@ class shadow::logindefs (
                           $sys_gid_min   = $shadow::params::sys_gid_min_default,
                           $sys_gid_max   = $shadow::params::sys_gid_max_default,
                         ) inherits shadow {
+  include ::shadow
 
-  class { '::shadow::install': } ->
+  Class['::shadow::install'] ->
   class { '::shadow::logindefs::config': } ->
   Class['::shadow::logindefs']
 
