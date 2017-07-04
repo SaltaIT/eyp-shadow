@@ -64,5 +64,9 @@ UMASK           077
 #
 USERGROUPS_ENAB yes
 
-# Use SHA512 to encrypt password.
-ENCRYPT_METHOD SHA512
+# Use <%= @encrypt_method %> to encrypt password.
+ENCRYPT_METHOD <%= @encrypt_method %>
+
+<% if @encrypt_method == "MD5" -%>
+MD5_CRYPT_ENAB yes
+<% end -%>
