@@ -15,6 +15,8 @@ class shadow::params {
     $pass_min_days_default='0'
   }
 
+  $encrypt_method_default='SHA512'
+
   case $::osfamily
   {
     'redhat':
@@ -29,7 +31,6 @@ class shadow::params {
           $sys_uid_max_default = undef
           $sys_gid_min_default = undef
           $sys_gid_max_default = undef
-          $encrypt_method_default = 'MD5'
         }
         /^7.*$/:
         {
@@ -39,7 +40,6 @@ class shadow::params {
           $sys_uid_max_default = '999'
           $sys_gid_min_default = '201'
           $sys_gid_max_default = '999'
-          $encrypt_method_default='SHA512'
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
