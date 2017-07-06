@@ -53,7 +53,24 @@ the fancy stuff with your module here.
 
 ### classes
 
-#### useradd
+#### shadow::logindefs
+
+* **maildir**:        = $shadow::params::maildir_default,
+* **pass_max_days**:  = $shadow::params::pass_max_days_default,
+* **pass_min_days**:  = $shadow::params::pass_min_days_default,
+* **pass_min_len**:   = $shadow::params::pass_min_len_default,
+* **pass_warn_age**:  = $shadow::params::pass_warn_age_default,
+* **uid_min**:			  = '1000',
+* **uid_max**:			  = '60000',
+* **gid_min**:			  = '1000',
+* **gid_max**:			  = '60000',
+* **sys_uid_min**:    = $shadow::params::sys_uid_min_default,
+* **sys_uid_max**:    = $shadow::params::sys_uid_max_default,
+* **sys_gid_min**:    = $shadow::params::sys_gid_min_default,
+* **sys_gid_max**:    = $shadow::params::sys_gid_max_default,
+* **encrypt_method**: = $encrypt_method_default,
+
+#### shadow::useradd
 
 * **group**: The group name or ID for a new user's initial group (when the **-N/--no-user-group** is used or when the **USERGROUPS_ENAB** variable is set to **no** in **/etc/login.defs**). The named group must exist, and a numerical group **ID** must have an existing entry (default: 100)
 * **home**: The default base directory for the system if no homedir (-d) is specified. **home** is concatenated with the account name to define the home directory. (default: /home)
