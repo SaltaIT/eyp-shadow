@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.3
+
+* bugfix Ubuntu 16.06 **login.defs**
+
 ## 0.1.2
 
 * Added Ubunut 18.04 support

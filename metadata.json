@@ -1,6 +1,6 @@
 {
   "name": "eyp-shadow",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "eyp",
   "summary": "manages useradd and login.defs defaults",
   "license": "Apache-2.0",

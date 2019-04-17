@@ -1,6 +1,5 @@
 class shadow::params {
 
-  $pass_min_len_default='5'
   $pass_warn_age_default='7'
 
   if(hiera('eypshadow::hardening', false))
@@ -23,6 +22,7 @@ class shadow::params {
     {
       $package_name='shadow-utils'
       $maildir_default = '/var/spool/mail'
+      $pass_min_len_default='5'
       case $::operatingsystemrelease
       {
         /^[5-6].*$/:
@@ -44,6 +44,7 @@ class shadow::params {
     }
     'Debian':
     {
+      $pass_min_len_default=undef
       case $::operatingsystem
       {
         'Ubuntu':
