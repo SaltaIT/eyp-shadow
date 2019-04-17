@@ -28,8 +28,6 @@ class shadow::logindefs (
       {
         /^[6-7].*$/:
         {
-          $package_name='shadow-utils'
-          $maildir_default = '/var/spool/mail'
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
@@ -44,7 +42,6 @@ class shadow::logindefs (
           {
             /^1[468].*$/:
             {
-              fail('not implemented')
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
