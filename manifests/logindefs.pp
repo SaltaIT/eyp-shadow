@@ -42,7 +42,7 @@ class shadow::logindefs (
         {
           case $::operatingsystemrelease
           {
-            /^1[4-7].*$/:
+            /^1[468].*$/:
             {
               fail('not implemented')
             }

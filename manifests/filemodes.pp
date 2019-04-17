@@ -1,4 +1,4 @@
-class shadow::filemodes() inherits shadow {
+class shadow::filemodes inherits shadow {
 
   file { '/etc/group-':
     ensure => 'present',
