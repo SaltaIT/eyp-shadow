@@ -2,7 +2,7 @@
 
 ## 0.1.3
 
-* bugfix Ubuntu 16.06 **login.defs**
+* bugfix Ubuntu 16.04 **login.defs**
 
 ## 0.1.2
 
